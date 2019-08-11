@@ -1,0 +1,52 @@
+echo $PATH
+
+VAR1="test"
+export VAR1
+export VAR2="test2"
+bash 
+echo $VAR1
+echo $VAR2
+
+ping -i 0.2 google.com | grep time
+ip a  | grep inet | grep -v inet6 | awk '{print $2}' | tail -n1 | cut -d'/' -f1
+
+cat < /etc/passwd > passw
+cat < /etc/group >> passw
+
+# signals
+ping google.com
+^Z
+ps aux | grep [g]oogle.com | awk '{print $2, $8}'
+kill -18 PINGPID
+
+ls -l > output &
+cat output
+
+ls -l  > output && echo 'success' || echo 'fail'
+ls -l NONE_EXISTANT_FILE > output && echo 'success' || echo 'fail'
+
+
+cd /tmp
+pwd 
+
+ulimit -a #list current limits
+ulimit -n 1
+cat > sdaasdasd 
+
+ulimit -u 1
+ls
+
+ulimit -n 1
+cat > sdaasdasd 
+
+bash# ./shell
+0: exit 10
+bash# echo $? #should write 10
+
+type -a pwd
+pwd is a shell builtin
+pwd is /bin/pwd
+
+nice -n 10 ping google.com > /dev/null &
+ps ax -o pid,ni,cmd | awk '/[g]oogle.com/ {print $2}'
+
